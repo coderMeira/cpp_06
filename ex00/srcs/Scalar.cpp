@@ -42,7 +42,7 @@ t_type	Scalar::findType(std::string literal) const
 	else if (literal.length() == 1)
 	{
 		char	c = literal.at(0);
-		if (c >= '0' && c <= 9)
+		if (c >= '0' && c <= '9')
 			return (INT);
 		else if (isprint(c))
 			return (CHAR);
@@ -74,14 +74,14 @@ void		Scalar::print(int i) const {
 }
 
 void		Scalar::print(float f) const {
-	if (f > 256 || f < 0)
+	if (f > 256 || f < 0 || f != f)
 		std::cout << "char: impossible" << std::endl;
 	else if (f > 126 || f < 32)
 		std::cout << "char: Non displayable" << std::endl;
 	else
 		std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
 
-	if (f > INT_MAX || f < INT_MIN)
+	if (f > INT_MAX || f < INT_MIN || f != f)
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(f) << std::endl;
@@ -91,14 +91,14 @@ void		Scalar::print(float f) const {
 }
 
 void		Scalar::print(double d) const {
-	if (d > 256 || d < 0)
+	if (d > 256 || d < 0 || d != d)
 		std::cout << "char: impossible" << std::endl;
 	else if (d > 126 || d < 32)
 		std::cout << "char: Non displayable" << std::endl;
 	else
 		std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
 
-	if (d > INT_MAX || d < INT_MIN)
+	if (d > INT_MAX || d < INT_MIN || d != d)
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(d) << std::endl;

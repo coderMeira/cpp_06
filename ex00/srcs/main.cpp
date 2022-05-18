@@ -14,22 +14,26 @@ int	main(int ac, char **av)
 
 		switch(type)
 		{
-			case CHAR:{
+			case CHAR:
+			{
 				char	c = literal.at(0);
 				convert.print(c);
 				break;
 			}
-			case INT:{
-				int	i = std::atoi(literal.c_str());
+			case INT:
+			{
+				int		i = std::atoi(literal.c_str());
 				convert.print(i);
 				break;
 			}
-			case FLOAT:{
+			case FLOAT:
+			{
 				float	f = std::atof(literal.c_str());
 				convert.print(f);
 				break;
 			}
-			case DOUBLE:{
+			case DOUBLE:
+			{
 				double	d = static_cast<double>(std::atof(literal.c_str()));
 				convert.print(d);
 				break;
